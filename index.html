@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+
+        <section id="menu" class="estiloMenu desativado">
+            <div class="titulo">
+                <h1>Conhecendo seus Conhecimentos</h1>
+                <img src="img/emoji.png" alt="" width="50px">
+                <p>Um pequeno quiz para testar seus conhecimentos</p>
+            </div>
+            <div id="botoes">
+                <button class="button" id="bcomecar">Começar</button>
+                <button class="button" id="bsobre">Sobre</button>
+            </div>
+        </section>
+
+        <section id="sobre" class="estiloSobre desativado">
+            <p id="voltar">&larr;</p>
+            <div class="titulo">
+                <h2>Sobre o Quiz</h2>
+            </div>
+
+            <div id="listSobre">
+                <ol>
+                    <li>
+                        <h3>Porque devo responder?</h3>
+                    </li>
+                    <p>Para ver se você tem conhecimentos conhecidos e fazer algo diferente da sua rotina, até porque
+                        não é todo dia que você responde um quiz.</p>
+                    <li>
+                        <h3>O que eu ganho com isso?</h3>
+                    </li>
+                    <p>De verdade, nada, mas quem sabe você não se diverte um pouco pensando qual a resposta certa</p>
+                    <li>
+                        <h3>Como funciona?</h3>
+                    </li>
+                    <p>Você tem 4 opções e apenas uma delas é a certa, talvez todas as respostas seja a primeira opção
+                        mas ai você descobre testando</p>
+                    <li>
+                        <h3>Observação:</h3>
+                    </li>
+                    <p>Se você leu até aqui, eu posso dizer que você perdeu tempo mas saiba q eu gosto de você XD ou
+                        não.</p>
+                </ol>
+            </div>
+
+        </section>
+
+        <section id="Quiz" class="estiloQuiz">
+            <div class="numero">
+                <p>1</p>
+            </div>
+            <div class="texto">
+                <p id="pergunta" class="pergunta"></p>
+            </div>
+            <div class="opcoes">
+                <button class="Pbutton"></button>
+                <button class="Pbutton"></button>
+                <button class="Pbutton"></button>
+                <button class="Pbutton"></button>
+            </div>
+        </section>
+
+        <section id="fim" class="estiloFim desativado">
+                <div class="fimTitulo ">
+                    <h2>Fim de jogo</h2>
+                </div>
+
+                <div class="fimImagem">
+                    <img src="img/trofeu.png" width="200px" height="200px" alt="">
+                </div>
+
+                <div class="textoFim">
+                    <p>Sua pontuação é:</p>
+                    <p id="pontuacao">01 / 123</p>
+                    <p id="textoOfensivo">fdgdfgfdgdfg</p>
+                </div>
+
+                <div class="buttonFim">
+                    <button class="Bfim"> ver respostas</button>
+                    <button class="Bfim"> jogar de novo</button>
+                </div>
+        </section>
+    </main>
+    <footer id="footer" class="desativado">
+        <p>@ProvisorioMyName</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
