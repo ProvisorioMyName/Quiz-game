@@ -4,13 +4,12 @@
   font-family: "Pixels";
   src: url("fonts/PixelGamer-Regular.otf");
 
-  --root{
+  --root {
     --fundo: #120327;
-    --cor1: #FA1E49;
-    --cor2: #22D91E;
-    --cor3: #F9481E;
-    --cor4: #1077CB;
-    
+    --cor1: #fa1e49;
+    --cor2: #22d91e;
+    --cor3: #f9481e;
+    --cor4: #1077cb;
   }
 }
 * {
@@ -30,12 +29,12 @@ body {
   padding: 20px;
 }
 main {
-    width: 100%;
+  width: 100%;
   flex: 1;
   display: flex;
 }
 .estiloMenu {
-    width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,7 +43,7 @@ main {
 }
 
 .titulo {
-    width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -143,38 +142,38 @@ footer {
 
 /* FIM */
 
-.estiloFim{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-    justify-content: center;
+.estiloFim {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 40px;
+  justify-content: center;
 }
 
-.desativado{
-    display: none;
+.desativado {
+  display: none;
 }
-.estiloFim h2{
-    font-size: 2.5em;
+.estiloFim h2 {
+  font-size: 2.5em;
 }
-.textoFim{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.textoFim {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.buttonFim{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.buttonFim {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.Bfim{
-    width: 100%;
-    height: 50px;
-    font-size: 1.1em;
-    border-radius: 5px;
-    border: 1px solid black;
+.Bfim {
+  width: 100%;
+  height: 50px;
+  font-size: 1.1em;
+  border-radius: 5px;
+  border: 1px solid black;
 }

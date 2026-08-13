@@ -26,32 +26,32 @@ start.addEventListener("click", () => {
 
 const enunciados = [
   {
-    pergunta: "Quantas perguntas você acha que esse quiz vai ter?",
-    opcoes: ["10", "15", "20", "Não sei e só vou saber quando eu terminar"],
-    resposta: "Não sei e só vou saber quando eu terminar",
+    pergunta: "Quem construiu a arca de 'Moisés'?",
+    opcoes: ["Davi", "Moisés", "Noé", "Salomão"],
+    resposta: "Noé",
   },
   {
-    pergunta: "Deus de paz esmagará Satanás _____",
+    pergunta: "O que indica BPM em uma música",
     opcoes: [
-      "Sob os nossos pés",
-      "Pisa nele, pisa nele",
-      "Será o dia do senhor",
-      "Santo e ungido de Deus",
+      "Batimentos do pulmão por minuto",
+      "Batimentos por minutos",
+      "O volume",
+      "A quantidade de instrumentos",
     ],
-    resposta: "Sob os nossos pés",
+    resposta: "Batimentos por minutos",
   },
   {
-    pergunta: "Quém é o cara que ataca pessoas nos sonhos?",
-    opcoes: ["Freddy Bear", "Frederico", "Art", "Freddy Krugger"],
-    resposta: "Freddy Krugger",
+    pergunta: "Quem traiu Jesus?",
+    opcoes: ["Judas Iscariotes", "Judas Tadeu", "Judas", "Quem é Judas?"],
+    resposta: "Judas Iscaríotes",
   },
   {
-    pergunta: "Qual é a única resposta correta desta pergunta?",
-    opcoes: ["A", "B", "C", "Todas estão erradas"],
-    resposta: "Todas estão erradas",
+    pergunta: "Qual livro conta a história de uma rainha que salvou seu povo?",
+    opcoes: ["Rute", "Ester", "Juízes", "Neemias"],
+    resposta: "Ester",
   },
   {
-    pergunta: 'Qual música que não faz parte do album "Meia Noite(FHOP)"',
+    pergunta: 'Qual música não faz parte do álbum "Meia Noite" (FHOP)?',
     opcoes: [
       "Quebra o silêncio",
       "Dono da minha afeição",
@@ -59,6 +59,79 @@ const enunciados = [
       "Em memória de Cristo",
     ],
     resposta: "Em memória de Cristo",
+  },
+  {
+    pergunta:
+      "Em Halloween, qual é a relação entre Michael Myers e Laurie Strode?",
+    opcoes: [
+      "São irmãos",
+      "São pai e filha",
+      "São primos",
+      "Não possuem relação familiar",
+    ],
+    resposta: "São irmãos",
+  },
+  {
+    pergunta: "Qual é o nome do assassino da franquia Sexta-Feira 13?",
+    opcoes: [
+      "Michael Myers",
+      "Jason Voorhees",
+      "Leatherface",
+      "Freddy Krueger",
+    ],
+    resposta: "Jason Voorhees",
+  },
+  {
+    pergunta: "Qual destas é uma nota musical?",
+    opcoes: ["Violeta", "Sol", "Lua", "Azul"],
+    resposta: "Sol",
+  },
+  {
+    pergunta: "Qual apóstolo era conhecido anteriormente como Saulo?",
+    opcoes: ["Pedro", "Paulo", "Barnabé", "Tomé"],
+    resposta: "Paulo",
+  },
+  {
+    pergunta: "Qual a função mais comum do baixo em uma banda?",
+    opcoes: [
+      "Fazer solos",
+      "Sustentar a base harmônica e rítmica",
+      "Tocar notas agudas",
+      "Brigar com o guitarrista",
+    ],
+    resposta: "Sustentar a base harmônica e rítmica",
+  },
+  {
+    pergunta: "Em qual filme aparece a boneca Annabelle?",
+    opcoes: ["Annabelle", "O exorcista", "Invocação do Mal", "Pânico"],
+    resposta: "Invocação do Mal",
+  },
+  {
+    pergunta:
+      "Em qual cidade se passa principalmente Miraculous: As Aventuras de Ladybug?",
+    opcoes: ["Londres", "Paris", "Tóquio", "Nova York"],
+    resposta: "Paris",
+  },
+  {
+    pergunta: "Quais são os nomes das três Meninas Superpoderosas?",
+    opcoes: [
+      "Florzinha, Lindinha e Docinho",
+      "Florzinha, Estrelinha e Docinho",
+      "Lindinha, Docinho e Margarida",
+      "Ervinha da Ninha, Feinha e Azedinha",
+    ],
+    resposta: "Florzinha, Lindinha e Docinho",
+  },
+  {
+    pergunta: "Complete: 'Salvar pessoas, caçar coisas. ________ família'",
+    opcoes: ["O negócio da", "A tradição da", "A missão da", "O legado da"],
+    resposta: "O negócio da",
+  },
+  {
+    pergunta:
+      "Qual é o nome do animatrônico que possui aparência de uma raposa em FNAF?",
+    opcoes: ["Bonnie", "Foxy", "Chica", "Freddy"],
+    resposta: "Foxy",
   },
 ];
 
@@ -79,6 +152,9 @@ function mostrarTextos() {
   }
 }
 
+const pontosFinal = document.querySelector("#pontuacao");
+const textoFinal = document.querySelector("#textoOfensivo");
+
 for (let i = 0; i < botoes.length; i++) {
   botoes[i].addEventListener("click", () => {
     if (
@@ -87,13 +163,26 @@ for (let i = 0; i < botoes.length; i++) {
       perguntaAtual++;
       acertos++;
     } else {
-      erros++;
+      perguntaAtual++;
     }
-    if(perguntaAtual >= enunciados.length){
-      quiz.classList.add('desativado')
-      fim.classList.remove('desativado')
-    } else{
-      mostrarTextos()
+    if (perguntaAtual >= enunciados.length) {
+      quiz.classList.add("desativado");
+      fim.classList.remove("desativado");
+    } else {
+      mostrarTextos();
+    }
+    pontosFinal.innerHTML = `${acertos} / ${enunciados.length}`;
+
+    if (acertos < 5) {
+      textoFinal.innerHTML =
+        "Vamos deixar de ser burro e se informar um pouco mais!";
+    } else if (acertos <= 7) {
+      textoFinal.innerHTML = "Tá bom dms eu esperava muito menos de você";
+    } else if (acertos <= 9) {
+      textoFinal.innerHTML =
+        "Eu não acredito que você sabe tudo isso de questão!";
+    } else {
+      textoFinal.innerHTML = "Meus parabens, até merece um prêmio";
     }
   });
 }
