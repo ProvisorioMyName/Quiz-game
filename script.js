@@ -1,25 +1,27 @@
 const bSobre = document.querySelector("#bsobre");
 const sobreEstilo = document.querySelector(".estiloSobre");
-const Menu = document.querySelector(".estiloMenu");
+const menu = document.querySelector(".estiloMenu");
 
 bSobre.addEventListener("click", () => {
   sobreEstilo.classList.remove("desativado");
-  Menu.classList.add("desativado");
+  menu.classList.add("desativado");
 });
 
 const voltar = document.getElementById("voltar");
 
 voltar.addEventListener("click", () => {
   sobreEstilo.classList.add("desativado");
-  Menu.classList.remove("desativado");
+  menu.classList.remove("desativado");
 });
 
 const start = document.querySelector("#bcomecar");
 const quiz = document.querySelector("#Quiz");
+const footer = document.querySelector('#footer')
 
 start.addEventListener("click", () => {
-  Menu.classList.add("desativado");
+  menu.classList.add("desativado");
   quiz.classList.remove("desativado");
+  footer.classList.add('desativado')
 });
 
 // Perguntas
@@ -138,9 +140,8 @@ const enunciados = [
 const botoes = document.querySelectorAll(".Pbutton");
 const fim = document.querySelector("#fim");
 
-let perguntaAtual = 0;
+let perguntaAtual = Math.floor(Math.random() * enunciados.length);
 let acertos = 0;
-let erros = 0;
 
 function mostrarTextos() {
   const pergunta = document.querySelector("#pergunta");
@@ -186,5 +187,14 @@ for (let i = 0; i < botoes.length; i++) {
     }
   });
 }
+const Bvoltar = document.querySelector('#Bvoltar')
+
+Bvoltar.addEventListener('click', () =>{
+  fim.classList.add('desativado')
+  menu.classList.remove('desativado')
+  
+  acertos = 0
+  perguntaAtual = 0
+})
 
 mostrarTextos();
