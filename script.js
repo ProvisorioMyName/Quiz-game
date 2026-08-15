@@ -16,12 +16,17 @@ voltar.addEventListener("click", () => {
 
 const start = document.querySelector("#bcomecar");
 const quiz = document.querySelector("#Quiz");
-const footer = document.querySelector('#footer')
+const footer = document.querySelector("#footer");
 
 start.addEventListener("click", () => {
   menu.classList.add("desativado");
   quiz.classList.remove("desativado");
-  footer.classList.add('desativado')
+  footer.classList.add("desativado");
+  acertos = 0;
+  quantidadePergunta = 0;
+  questaoUsada = [];
+
+  mostrarTextos();
 });
 
 // Perguntas
@@ -45,7 +50,7 @@ const enunciados = [
   {
     pergunta: "Quem traiu Jesus?",
     opcoes: ["Judas Iscariotes", "Judas Tadeu", "Judas", "Quem é Judas?"],
-    resposta: "Judas Iscaríotes",
+    resposta: "Judas Iscariotes",
   },
   {
     pergunta: "Qual livro conta a história de uma rainha que salvou seu povo?",
@@ -137,19 +142,45 @@ const enunciados = [
   },
 ];
 
+// PARTE DO QUIZ
+
 const botoes = document.querySelectorAll(".Pbutton");
 const fim = document.querySelector("#fim");
 
-let perguntaAtual = Math.floor(Math.random() * enunciados.length);
+let perguntaAtual;
 let acertos = 0;
+let questaoUsada = [];
+let opcoesAtuais = [];
 
 function mostrarTextos() {
   const pergunta = document.querySelector("#pergunta");
 
-  pergunta.innerHTML = enunciados[perguntaAtual].pergunta;
+  let perguntaAleatoria = Math.floor(Math.random() * enunciados.length);
 
+  while (questaoUsada.includes(perguntaAleatoria)) {
+    perguntaAleatoria = Math.floor(Math.random() * enunciados.length);
+  }
+  questaoUsada.push(perguntaAleatoria);
+
+  perguntaAtual = perguntaAleatoria;
+
+  pergunta.innerHTML = enunciados[perguntaAleatoria].pergunta;
+
+  let respostaUsada = [];
+  opcoesAtuais = [];
   for (let i = 0; i < enunciados[perguntaAtual].opcoes.length; i++) {
-    botoes[i].innerHTML = enunciados[perguntaAtual].opcoes[i];
+    let questaoAleatoria = Math.floor(
+      Math.random() * enunciados[perguntaAtual].opcoes.length,
+    );
+
+    while (respostaUsada.includes(questaoAleatoria)) {
+      questaoAleatoria = Math.floor(
+        Math.random() * enunciados[perguntaAtual].opcoes.length,
+      );
+    }
+    respostaUsada.push(questaoAleatoria);
+    opcoesAtuais.push(enunciados[perguntaAtual].opcoes[questaoAleatoria]);
+    botoes[i].innerHTML = opcoesAtuais[i];
   }
 }
 
@@ -158,15 +189,12 @@ const textoFinal = document.querySelector("#textoOfensivo");
 
 for (let i = 0; i < botoes.length; i++) {
   botoes[i].addEventListener("click", () => {
-    if (
-      enunciados[perguntaAtual].opcoes[i] == enunciados[perguntaAtual].resposta
-    ) {
-      perguntaAtual++;
+    if (opcoesAtuais[i] == enunciados[perguntaAtual].resposta) {
       acertos++;
-    } else {
-      perguntaAtual++;
     }
-    if (perguntaAtual >= enunciados.length) {
+    quantidadePergunta++;
+
+    if (quantidadePergunta >= enunciados.length) {
       quiz.classList.add("desativado");
       fim.classList.remove("desativado");
     } else {
@@ -176,10 +204,10 @@ for (let i = 0; i < botoes.length; i++) {
 
     if (acertos < 5) {
       textoFinal.innerHTML =
-        "Vamos deixar de ser burro e se informar um pouco mais!";
-    } else if (acertos <= 7) {
-      textoFinal.innerHTML = "Tá bom dms eu esperava muito menos de você";
+        "Vamos deixar de ser sem cultura e se informar um pouco mais!";
     } else if (acertos <= 9) {
+      textoFinal.innerHTML = "Tá bom até eu esperava muito menos de você";
+    } else if (acertos <= 14) {
       textoFinal.innerHTML =
         "Eu não acredito que você sabe tudo isso de questão!";
     } else {
@@ -187,14 +215,9 @@ for (let i = 0; i < botoes.length; i++) {
     }
   });
 }
-const Bvoltar = document.querySelector('#Bvoltar')
+const Bvoltar = document.querySelector("#Bvoltar");
 
-Bvoltar.addEventListener('click', () =>{
-  fim.classList.add('desativado')
-  menu.classList.remove('desativado')
-  
-  acertos = 0
-  perguntaAtual = 0
-})
-
-mostrarTextos();
+Bvoltar.addEventListener("click", () => {
+  fim.classList.add("desativado");
+  menu.classList.remove("desativado");
+});
