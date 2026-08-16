@@ -1,8 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
+
 @font-face {
   font-family: "Pixels";
   src: url("fonts/PixelGamer-Regular.otf");
+}
+@font-face {
+  font-family: "Silk";
+  src: url("fonts/slkscr.otf");
 }
 :root {
   --fundo: #120327;
@@ -20,7 +26,7 @@
 }
 
 body {
-  height:100vh;
+  height: 100vh;
   font-family:
     "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -90,7 +96,7 @@ main {
     0px 0px 5px var(--sombra),
     inset 0px 0px 5px var(--sombra);
   cursor: pointer;
-  background-color: var(--cor);
+  background-color: var(--backCor);
   color: white;
   font-family: "Pixelify Sans", cursive;
   display: flex;
@@ -102,7 +108,7 @@ button > p {
 }
 #bcomecar {
   --sombra: var(--vermelho);
-  --cor: var(--vermelho);
+  --backCor: var(--vermelho);
 }
 #bsobre {
   --sombra: var(--azul);
@@ -129,7 +135,7 @@ footer {
   transform: scaleX(-1);
   padding: 5px;
   border-radius: 5px;
-  box-shadow: 1px 1px 5px var(--azul);
+  box-shadow: 0px 0px 5px var(--azul);
 }
 .sobret {
   font-family: "Pixelify Sans", sans-serif;
@@ -160,7 +166,7 @@ li {
 }
 li h3 {
   font-family: Pixels;
-  color: #1077cb;
+  color: var(--azul);
 }
 #listSobre p {
   padding: 5px;
@@ -175,7 +181,8 @@ li h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 55px;
 }
 
 .numero {
@@ -184,24 +191,28 @@ li h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px dashed black;
+  border: 2px dashed #de008d6c;
   border-radius: 50%;
   font-size: 2.5em;
-  font-family: cursive;
+  font-family: Oxanium;
+  font-weight: bold;
 }
 
 .texto {
   min-width: 100%;
-  height: 110px;
+  min-height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 20px;
   border-radius: 5px;
-  border: 1px solid #1077cb;
-  font-size: 0.9em;
+  border: 2px solid #de008d6c;
+  font-size: 0.8em;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 300;
 }
 .opcoes {
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -214,13 +225,37 @@ li h3 {
   font-weight: 800;
 }
 .Pbutton {
-  min-width: 310px;
+  min-width: 100%;
   height: 60px;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 5px;
-  border: 1px solid grey;
-  background-color: white;
+  border: 1px solid var(--corButton);
+  box-shadow:
+    0px 0px 2px var(--corButton);
   padding: 10px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.Pbutton:active{
+  transform: translate(1px, 1px);
+  box-shadow: 0px 0px 4px var(--corButton);
+}
+
+#B1cor {
+  --corButton: var(--vermelho);
+  background-color: #fa1e4a1c;
+}
+#B2cor {
+  --corButton: var(--azul);
+  background-color: #1077cb1c;
+}
+#B3cor {
+  --corButton: var(--verde);
+  background-color: #22d91e1c;
+}
+#B4cor {
+  --corButton: var(--laranja);
+  background-color: #f9481e1c;
 }
 
 /* FIM */

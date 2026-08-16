@@ -26,8 +26,7 @@ start.addEventListener("click", () => {
   acertos = 0;
   quantidadePergunta = 0;
   questaoUsada = [];
-  numQuestao.innerHTML = "1"
-
+  numQuestao.innerHTML = "1";
 
   mostrarTextos();
 });
@@ -190,8 +189,9 @@ function mostrarTextos() {
 const pontosFinal = document.querySelector("#pontuacao");
 const textoFinal = document.querySelector("#textoOfensivo");
 
-const numQuestao = document.querySelector("#numeroQuestao")
-let contador = 1
+const numQuestao = document.querySelector("#numeroQuestao");
+let contador = 1;
+
 
 for (let i = 0; i < botoes.length; i++) {
   botoes[i].addEventListener("click", () => {
@@ -207,8 +207,8 @@ for (let i = 0; i < botoes.length; i++) {
       mostrarTextos();
     }
 
-    contador += 1
-    numQuestao.innerHTML = `${contador}`
+    contador += 1;
+    numQuestao.innerHTML = `${contador}`;
 
     pontosFinal.innerHTML = `${acertos} / ${enunciados.length}`;
 
@@ -231,5 +231,5 @@ Bvoltar.addEventListener("click", () => {
   fim.classList.add("desativado");
   menu.classList.remove("desativado");
   footer.classList.remove("desativado");
-  contador = 1
+  contador = 1;
 });
