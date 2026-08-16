@@ -12,6 +12,7 @@ const voltar = document.getElementById("voltar");
 voltar.addEventListener("click", () => {
   sobreEstilo.classList.add("desativado");
   menu.classList.remove("desativado");
+  footer.classList.remove('desativado')
 });
 
 const start = document.querySelector("#bcomecar");
@@ -220,4 +221,5 @@ const Bvoltar = document.querySelector("#Bvoltar");
 Bvoltar.addEventListener("click", () => {
   fim.classList.add("desativado");
   menu.classList.remove("desativado");
+  footer.classList.remove('desativado')
 });

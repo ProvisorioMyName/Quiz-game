@@ -26,7 +26,7 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
   padding: 20px;
   align-items: center;
   justify-content: center;
@@ -61,8 +61,8 @@ main {
   font-size: 2.3rem;
   color: white;
   text-shadow:
-    3px 3px 1px #fa1e49,
-    4px 4px 4px #1077cb;
+    3px 3px 1px var(--vermelho),
+    4px 4px 4px var(--azul);
 }
 .Pqtexto {
   font-family: "Pixelify Sans", sans-serif;
@@ -80,7 +80,6 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  margin: 20px 0px;
 }
 .button {
   width: 90%;
@@ -88,16 +87,18 @@ main {
   font-size: 1.5em;
   border-radius: 5px;
   border: 1px solid var(--borda);
-  box-shadow: 0px 0px 5px var(--sombra), inset 0px 0px 5px var(--sombra);
+  box-shadow:
+    0px 0px 5px var(--sombra),
+    inset 0px 0px 5px var(--sombra);
   cursor: pointer;
   background-color: var(--cor);
   color: white;
-  font-family: 'Pixelify Sans', cursive;
+  font-family: "Pixelify Sans", cursive;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-button > p{
+button > p {
   width: 110px;
 }
 #bcomecar {
@@ -122,20 +123,48 @@ footer {
   flex-direction: column;
   gap: 20px;
 }
-.desativado {
-  display: none;
+#voltar {
+  border: 2px solid var(--azul);
+  transform: scaleX(-1);
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px var(--azul);
+}
+.sobret {
+  font-family: "Pixelify Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  text-shadow:
+    3px 3px 1px var(--vermelho),
+    4px 4px 4px var(--azul);
 }
 
 #listSobre {
-  padding-left: 10px;
+  width: 100%;
+  height: auto;
+}
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+}
+li {
+  padding: 10px;
+  border: 1px solid var(--vermelho);
+  border-radius: 5px;
+  box-shadow:
+    1px 1px 5px var(--vermelho),
+    inset 1px 1px 5px var(--vermelho);
+}
+li h3 {
+  font-family: Pixels;
+  color: #1077cb;
 }
 #listSobre p {
   padding: 5px;
   font-size: 15px;
-}
-#voltar {
-  font-size: 2em;
-  font-weight: 900;
+  font-family: Pixelify Sans;
 }
 
 /* Quiz */
@@ -204,10 +233,6 @@ footer {
   gap: 40px;
   justify-content: center;
 }
-
-.desativado {
-  display: none;
-}
 .estiloFim h2 {
   font-size: 2.5em;
 }
@@ -229,4 +254,8 @@ footer {
   font-size: 1.1em;
   border-radius: 5px;
   border: 1px solid black;
+}
+
+.desativado {
+  display: none;
 }
