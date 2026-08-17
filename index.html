@@ -11,7 +11,7 @@
 <body>
     <main>
 
-        <section id="menu" class="estiloMenu">
+        <section id="menu" class="estiloMenu desativado">
             <div class="titulo">
                 <h1>Conhecendo <br> seus Conhecimentos</h1>
             </div>
@@ -77,24 +77,36 @@
             </div>
         </section>
 
-        <section id="fim" class="estiloFim desativado">
+        <section id="fim" class="estiloFim ">
             <div class="fimTitulo ">
                 <h2>Fim de jogo</h2>
             </div>
 
             <div class="fimImagem">
-                <img src="img/trofeu.png" width="200px" height="200px" alt="">
+                <img src="img/trofeu.png" width="150px" height="150px" alt="Troféu">
             </div>
 
             <div class="textoFim">
                 <p>Sua pontuação é:</p>
-                <p id="pontuacao"></p>
+                <div class="pontos">
+                    <span id="pontuacao"></span>
+                    <span class="barra">/</span>
+                    <span id="total"></span>
+                </div>
                 <p id="textoOfensivo"></p>
             </div>
 
             <div class="buttonFim">
-                <button id="Bresp" class="Bfim">Ver respostas</button>
-                <button id="Bvoltar" class="Bfim">Voltar ao início</button>
+                <button id="Bresp" class="button">
+                    <img src="img/proximoAzul.png" alt="Seta" width="30px" class="seta"> 
+                    Ver respostas
+                    <img src="img/opcao-de-lista.png" alt="Uma lista" width=40px">
+                </button>
+                <button id="Bvoltar" class="button">
+                    <img src="img/proximo.png" alt="Seta para esquerda" width="30px" class="seta">
+                    Voltar ao início
+                    <img src="img/botao-home.png" alt="Casa" width="50px">
+                </button>
             </div>
         </section>
     </main>

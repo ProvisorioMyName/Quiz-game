@@ -192,6 +192,7 @@ const textoFinal = document.querySelector("#textoOfensivo");
 const numQuestao = document.querySelector("#numeroQuestao");
 let contador = 1;
 
+const total = document.querySelector("#total")
 
 for (let i = 0; i < botoes.length; i++) {
   botoes[i].addEventListener("click", () => {
@@ -210,7 +211,8 @@ for (let i = 0; i < botoes.length; i++) {
     contador += 1;
     numQuestao.innerHTML = `${contador}`;
 
-    pontosFinal.innerHTML = `${acertos} / ${enunciados.length}`;
+    pontosFinal.innerHTML = `${acertos}`;
+    total.innerHTML = `${enunciados.length}`;
 
     if (acertos < 5) {
       textoFinal.innerHTML =

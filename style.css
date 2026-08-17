@@ -7,9 +7,10 @@
   src: url("fonts/PixelGamer-Regular.otf");
 }
 @font-face {
-  font-family: "Silk";
-  src: url("fonts/slkscr.otf");
+  font-family: "Perfect";
+  src: url("fonts/Perfect\ DOS\ VGA\ 437.otf");
 }
+
 :root {
   --fundo: #120327;
   --texto-secundario: #4c2190;
@@ -87,7 +88,7 @@ main {
   gap: 15px;
 }
 .button {
-  width: 90%;
+  width: 100%;
   height: 60px;
   font-size: 1.5em;
   border-radius: 5px;
@@ -230,15 +231,14 @@ li h3 {
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid var(--corButton);
-  box-shadow:
-    0px 0px 2px var(--corButton);
+  box-shadow: 0px 0px 2px var(--corButton);
   padding: 10px;
   color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.Pbutton:active{
-  transform: translate(1px, 1px);
-  box-shadow: 0px 0px 4px var(--corButton);
+.Pbutton:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 7px var(--corButton);
 }
 
 #B1cor {
@@ -266,16 +266,54 @@ li h3 {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  gap: 40px;
+  gap: 30px;
   justify-content: center;
 }
 .estiloFim h2 {
   font-size: 2.5em;
+  font-family: Pixels;
+  text-shadow:
+    3px 3px 1px var(--vermelho),
+    4px 4px 4px var(--azul);
+}
+
+.fimImagem{
+  border: 1px solid #fa1e49;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 5px var(--vermelho), inset 0px 0px 5px var(--vermelho);
 }
 .textoFim {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
+  font-family: Pixelify sans;
+}
+
+.pontos{
+  font-family: Perfect;
+}
+.barra{
+  font-family: Pixelify sans;
+  font-size: 2em;
+}
+#pontuacao{
+  width: 100px;
+  height: auto;
+  border-radius: 20px;
+  font-size: 1.6em;
+  padding: 10px;
+  color: var(--verde);
+  letter-spacing: -1px;
+}
+#total{
+  font-size: 1.6em;
+}
+#textoOfensivo{
+  font-family: oxanium;
+  font-weight: 600;
 }
 .buttonFim {
   width: 100%;
@@ -284,12 +322,18 @@ li h3 {
   gap: 10px;
 }
 
-.Bfim {
-  width: 100%;
-  height: 50px;
-  font-size: 1.1em;
-  border-radius: 5px;
-  border: 1px solid black;
+#Bresp{
+  --sombra: var(--azul);
+  --borda: var(--azul);
+  color: #1077cb;
+}
+.seta{
+  transform: scaleX(-1);
+}
+
+#Bvoltar{
+  --sombra: #fa1e4a;
+  --backCor: #fa1e4abb;
 }
 
 .desativado {
