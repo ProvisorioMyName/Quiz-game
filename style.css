@@ -336,6 +336,86 @@ li h3 {
   --backCor: #fa1e4abb;
 }
 
+/* RESPOSTAS */
+
+.resposta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px 0px;
+  gap: 20px;
+}
+.resposta h2 {
+  font-size: 2.1em;
+  font-family: Pixels;
+  text-shadow:
+    3px 3px 1px var(--vermelho),
+    4px 4px 4px var(--azul);
+}
+
+.pontosFinais{
+  margin-top: 10px;
+  font-family: Oxinaum;
+  font-size: 1.2em;
+}
+.cont-resp{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.quadro-resp{
+  width: 90%;
+  min-height: 150px;
+  border: 1px solid var(--verde);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0px 0px 5px var(--verde);
+}
+.linha{
+  width: 100%;
+  border: 1px dashed grey;
+}
+.resp-numero{
+  font-family: Perfect;
+  font-size: 2em;
+}
+.resp-questao{
+  font-family: Oxanium;
+  font-size: .8em;
+  text-align: left;
+  padding: 5px 0px;
+}
+
+.respostas{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  font-size: .8em;
+  gap: 10px;
+  margin-top: 10px;
+  font-family: Oxanium;
+}
+.resp-escolhida{
+  font-size: .9em;
+  text-align: start;
+  font-weight: 600;
+}
+
+.resp-certa{
+  font-weight: 700;
+}
+
+#BRespvoltar{
+  --sombra: #fa1e4a;
+  --backCor: #fa1e4abb;
+}
 .desativado {
   display: none;
 }
