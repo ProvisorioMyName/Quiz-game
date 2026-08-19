@@ -215,15 +215,21 @@ function mostrarTextos() {
 // PONTUAÇÃO E CONTADOR
 //
 
-const pontosFinal = document.querySelector("#pontuacao");
+const pontosFinal = document.querySelector(".pontuacao");
 const textoFinal = document.querySelector("#textoOfensivo");
 
 const numQuestao = document.querySelector("#numeroQuestao");
 let contador = 1;
 
-const total = document.querySelector("#total");
+const total = document.querySelector(".total");
 
 let respostas = [];
+
+function MostrarResultado(){
+    pontosFinal.innerHTML = `${acertos}`;
+    total.innerHTML = `${enunciados.length}`;
+    return `<span class="pontos"><span class= "pontuacao">${acertos}</span> <span class= "barra">/</span> <span class="total">${enunciados.length}</span></span>`
+}
 
 for (let i = 0; i < botoes.length; i++) {
   botoes[i].addEventListener("click", () => {
@@ -242,15 +248,13 @@ for (let i = 0; i < botoes.length; i++) {
     if (quantidadePergunta >= enunciados.length) {
       quiz.classList.add("desativado");
       fim.classList.remove("desativado");
+      MostrarResultado()
     } else {
       mostrarTextos();
     }
 
     contador++;
     numQuestao.innerHTML = `${contador}`;
-
-    pontosFinal.innerHTML = `${acertos}`;
-    total.innerHTML = `${enunciados.length}`;
 
     if (acertos < 5) {
       textoFinal.innerHTML =
@@ -299,15 +303,19 @@ BVoltarResp.addEventListener("click", () => {
 Bresposta.addEventListener("click", () => {
   fim.classList.add("desativado");
   TelaResposta.classList.remove("desativado");
+  MostrarResultado()
 
   const containerQuestao = document.querySelector(".cont-resp");
   const boxquestao = document.querySelector(".quadro-resp");
   const copias = containerQuestao.querySelectorAll(".copias");
+  const resPontos = document.getElementById('pontosFinais')
 
   for (let i = 0; i < copias.length; i++) {
     copias[i].remove();
   }
 
+  resPontos.innerHTML = MostrarResultado()
+   
   for (let i = 0; i < respostas.length; i++) {
     const copiaBoxQuestao = boxquestao.cloneNode(true);
 
@@ -325,7 +333,19 @@ Bresposta.addEventListener("click", () => {
     respEscolhida.innerHTML = respostas[i].escolha
 
     respCerta.innerHTML = `${enunciados[respostas[i].questao].respostaCerta}`;
-    respCerta.style.color = "green";
+    respCerta.style.color = "#22d91e";
+
+    if(respostas[i].escolha === enunciados[respostas[i].questao].respostaCerta){
+      ResNumero.style.color = '#22d91e'
+      copiaBoxQuestao.style.borderColor = 'green'
+      copiaBoxQuestao.style.boxShadow = '0px 0px 5px #22d91e'
+      respEscolhida.style.color = '#22d91e'
+    } else{
+      ResNumero.style.color = '#fa1e4a'
+      copiaBoxQuestao.style.borderColor = '#fa1e4a'
+      copiaBoxQuestao.style.boxShadow = '0px 0px 5px #fa1e4a'
+      respEscolhida.style.color = '#fa1e4a'
+    }
 
     containerQuestao.appendChild(copiaBoxQuestao);
   }

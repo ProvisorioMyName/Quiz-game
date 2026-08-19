@@ -299,7 +299,7 @@ li h3 {
   font-family: Pixelify sans;
   font-size: 2em;
 }
-#pontuacao{
+.pontuacao{
   width: 100px;
   height: auto;
   border-radius: 20px;
@@ -308,7 +308,7 @@ li h3 {
   color: var(--verde);
   letter-spacing: -1px;
 }
-#total{
+.total{
   font-size: 1.6em;
 }
 #textoOfensivo{
@@ -355,7 +355,7 @@ li h3 {
 }
 
 .pontosFinais{
-  margin-top: 10px;
+  margin-top: 15px;
   font-family: Oxinaum;
   font-size: 1.2em;
 }
@@ -405,7 +405,7 @@ li h3 {
 .resp-escolhida{
   font-size: .9em;
   text-align: start;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .resp-certa{

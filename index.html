@@ -11,7 +11,7 @@
 <body>
     <main>
 
-        <section id="menu" class="estiloMenu desativado">
+        <section id="menu" class="estiloMenu">
             <div class="titulo">
                 <h1>Conhecendo <br> seus Conhecimentos</h1>
             </div>
@@ -77,7 +77,7 @@
             </div>
         </section>
 
-        <section id="fim" class="estiloFim">
+        <section id="fim" class="estiloFim desativado">
             <div class="fimTitulo ">
                 <h2>Fim de jogo</h2>
             </div>
@@ -88,11 +88,11 @@
 
             <div class="textoFim">
                 <p>Sua pontuação é:</p>
-                <div class="pontos">
-                    <span id="pontuacao"></span>
+                <p class="pontos">
+                    <span class="pontuacao"></span>
                     <span class="barra">/</span>
-                    <span id="total"></span>
-                </div>
+                    <span class="total"></span>
+                </p>
                 <p id="textoOfensivo"></p>
             </div>
 
@@ -113,7 +113,7 @@
         <section id="resposta" class="resposta desativado">
             <div>
                 <h2>Suas respostas</h2>
-                <p class="pontosFinais"></p>
+                <p id="pontosFinais"></p>
             </div>
             <div class="cont-resp">
                 <div class="quadro-resp">
@@ -138,7 +138,7 @@
             </div>
         </section>
     </main>
-    <footer id="footer" class="footer desativado">
+    <footer id="footer" class="footer">
         <p>@ProvisorioMyName</p>
     </footer>
     <script src="script.js"></script>
